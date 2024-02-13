@@ -3,6 +3,7 @@
     "name": "auth-google",
     "slug": "auth-google",
     "version": "1.0.0",
+    "jsEngine": "hermes",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,16 +16,32 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kelsongs.authgoogle"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kelsongs.authgoogle",
+      "jsEngine":"jsc"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps._some_id_here_"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5fee119e-e0ff-4f6e-85e3-e3f664687fd4"
+      }
     }
   }
 }
